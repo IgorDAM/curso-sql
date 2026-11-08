@@ -20,3 +20,9 @@ SELECT Count(*) AS PedidosSinCliente FROM dbo.Pedido WHERE ClienteId IS NULL;
 -- Predicción: 3 y 400.00. Resultado: 3 y 400.00
 SELECT Count(Importe) AS PagadosConImporte, SUM(Importe) AS TotalImporte FROM dbo.Pedido WHERE Estado = 'Pagado';
 
+-- F)
+
+SELECT PedidoId, Importe FROM dbo.Pedido ORDER BY Importe DESC, PedidoId OFFSET 2 ROWS FETCH NEXT 2 ROWS ONLY;
+
+-- G
+SELECT Nombre FROM Cliente WHERE Ciudad = 'Gijón' OR '1'='1'
