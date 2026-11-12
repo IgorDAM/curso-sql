@@ -26,3 +26,7 @@ SELECT PedidoId, Importe FROM dbo.Pedido ORDER BY Importe DESC, PedidoId OFFSET 
 
 -- G
 SELECT Nombre FROM Cliente WHERE Ciudad = 'Gijón' OR '1'='1'
+
+SELECT 5 * NULL            AS r1,
+       ISNULL(NULL, 0) * 5 AS r2,
+       COALESCE(NULL, NULL, 7) AS r3;
